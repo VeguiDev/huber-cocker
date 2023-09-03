@@ -147,6 +147,10 @@ async function cock() {
         }
       }
 
+      punish.renew();
+      config.data.punishments[punishI] = punish;
+      config.save();
+
       continue;
     }
 
