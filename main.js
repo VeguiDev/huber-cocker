@@ -125,6 +125,31 @@ async function cock() {
 
     if (!member || (member && !member.kickable)) continue;
 
+    if (member.id == "403040431686025219") {
+      const embed = new EmbedBuilder({
+        title: "Buen chiste 🫳🥵!",
+        description: "No puedo totear a VeguiDev porque si no me apaga :(",
+      });
+
+      embed.setColor("#e74c3c");
+
+      let reportChannel = await config.data.reportChannels.find(
+        (ch) => ch.guild_id == guild.id
+      );
+
+      if (reportChannel) {
+        let realChannel = await guild.channels.fetch(reportChannel.channel_id);
+
+        if (realChannel) {
+          await realChannel.send({
+            embeds: [embed],
+          });
+        }
+      }
+
+      continue;
+    }
+
     console.log("Applying cock to " + member.user.username);
 
     let channels = guild.channels.cache.filter((channel) =>
