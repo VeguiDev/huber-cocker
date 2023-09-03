@@ -8,7 +8,8 @@ export default class Configuration {
 
         this.path = xpath;
         this.data = {
-            punishments: []
+            punishments: [],
+            reportChannels: []
         };
 
         this.load();
